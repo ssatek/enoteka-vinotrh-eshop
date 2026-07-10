@@ -50,7 +50,7 @@
       '<div class="eno-price-row"><span class="eno-price-row__label">' + EnoIcons.bottle + ' S sebou</span><span class="eno-price-row__value">' + wine.ceny.lahev_ssebou + ' Kč</span></div>' +
       '<div class="eno-price-row"><span class="eno-price-row__label">' + EnoIcons.bottle + ' K otevření na místě</span><span class="eno-price-row__value">' + wine.ceny.lahev_otevrit + ' Kč</span></div>' +
       '</div>' +
-      '<a class="eno-cta" href="' + EnoData.vinotrhKoupitUrl(wine.kod) + '" target="_blank" rel="noopener">' +
+      '<a class="eno-cta" href="' + EnoData.vinotrhUrl(wine) + '" target="_blank" rel="noopener">' +
       'Koupit na Vinotrh.cz' + EnoIcons.arrowRight +
       '</a>';
 
@@ -78,7 +78,7 @@
 
         if (isRedirectMode()) {
           // Verze "redirect": žádná vlastní stránka, rovnou na produkt na vinotrh.cz.
-          window.location.replace(EnoData.vinotrhKoupitUrl(wine.kod));
+          window.location.replace(EnoData.vinotrhUrl(wine));
           return;
         }
 

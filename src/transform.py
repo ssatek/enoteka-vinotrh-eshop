@@ -13,9 +13,12 @@ doplnit ve zdrojovém systému (tak aby další den byly vyplněné rovnou v syn
 """
 
 import json
+import urllib.parse
 from pathlib import Path
 
 import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE_XLSX = ROOT / "data" / "VINOTRH karta tisk II.xlsx"
@@ -25,6 +28,38 @@ VINARI_SHEET = "Prefixy"
 OVERRIDES_JSON = ROOT / "data" / "overrides.json"
 OUTPUT_JSON = ROOT / "output" / "wines.json"
 MISSING_REPORT_JSON = ROOT / "output" / "k_doplneni.json"
+
+VINOTRH_BASE_URL = "https://www.vinotrh.cz"
+VINOTRH_SEARCH_URL = VINOTRH_BASE_URL + "/vyhledavani/?string={kod}"
+VINOTRH_HTTP_HEADERS = {"User-Agent": "Mozilla/5.0 (enoteka.vinotrh.cz sync script)"}
+
+
+def resolve_vinotrh_url(kod: str, session: requests.Session) -> str | None:
+    """
+    Dohledá přímou URL produktu na vinotrh.cz podle kódu zboží (přesně podle
+    původního zadání -- ne jen odkaz na vyhledávání). Vyhledávací stránka
+    (Shoptet) vrací kartu produktu jako `.product`, uvnitř `[data-micro="sku"]`
+    s kódem a `a.name[data-micro="url"]` s relativní URL detailu -- ověřeno
+    na 3 kódech (PAR.0058, WAL.0395, KOR.0224), SKU vždy přesně sedí.
+    Vrátí None, pokud se nic nenajde nebo shoda selže -- volající pak spadne
+    zpět na odkaz na vyhledávání (viz assets/js/data.js, vinotrhUrl()).
+    """
+    url = VINOTRH_SEARCH_URL.format(kod=urllib.parse.quote(kod))
+    try:
+        resp = session.get(url, headers=VINOTRH_HTTP_HEADERS, timeout=15)
+        resp.raise_for_status()
+    except requests.RequestException:
+        return None
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+    for product in soup.select(".product"):
+        sku_el = product.select_one('[data-micro="sku"]')
+        if not sku_el or sku_el.get_text(strip=True) != kod:
+            continue
+        link = product.select_one('a.name[data-micro="url"]')
+        if link and link.get("href"):
+            return urllib.parse.urljoin(VINOTRH_BASE_URL, link["href"])
+    return None
 
 
 def load_source() -> pd.DataFrame:
@@ -132,9 +167,19 @@ def resolve_vyrobce(row: pd.Series, wine_overrides: dict, vinari_lookup: dict, m
     return row["Firma"]
 
 
-def transform_row(row: pd.Series, overrides: dict, vinari_lookup: dict, missing_report: list) -> dict:
+def transform_row(row: pd.Series, overrides: dict, vinari_lookup: dict, missing_report: list, session: requests.Session) -> dict:
     pozice = int(row["Enotéka pozice"])
     wine_overrides = overrides.get(str(pozice), {})
+    kod = row["Číslo"]
+
+    url_vinotrh = resolve_vinotrh_url(kod, session)
+    if not url_vinotrh:
+        missing_report.append({
+            "pozice": pozice,
+            "pole": "URL na vinotrh.cz (nedohledáno)",
+            "detail": f"Kód {kod} nevrátil žádnou shodu na vinotrh.cz -- web použije fallback na vyhledávání.",
+            "nazev": resolve_nazev(row, wine_overrides),
+        })
 
     return {
         "pozice": pozice,
@@ -144,6 +189,7 @@ def transform_row(row: pd.Series, overrides: dict, vinari_lookup: dict, missing_
         "jakost": resolve_jakost(row, wine_overrides),
         "vyrobce": resolve_vyrobce(row, wine_overrides, vinari_lookup, missing_report),
         "objem": resolve_objem(row, wine_overrides),
+        "url_vinotrh": url_vinotrh,
         "ceny": {
             "vzorek_20ml": row["Cena vzorek 20 ml"],
             "vzorek_50ml": row["Cena vzorek 50 ml"],
@@ -156,7 +202,7 @@ def transform_row(row: pd.Series, overrides: dict, vinari_lookup: dict, missing_
             "lahev_otevrit": row["Cena s DPH"] + row["Cena v res"],
             "poplatek_otevreni": row["Cena v res"],
         },
-        "kod": row["Číslo"],
+        "kod": kod,
         "alkohol": clean_decimal(row["Alkohol"]),
         "cukr": clean_decimal(row["Zbytkový cukr"]),
         "kyseliny": clean_decimal(row["Kyseliny"]),
@@ -182,10 +228,13 @@ def main():
     missing_report: list = []
 
     wines = []
-    for _, row in df.iterrows():
-        wine = transform_row(row, overrides, vinari_lookup, missing_report)
-        wine["sekce"] = assign_sekce(wine["pozice"])
-        wines.append(wine)
+    with requests.Session() as session:
+        for i, (_, row) in enumerate(df.iterrows(), start=1):
+            print(f"Dohledávám URL na vinotrh.cz ({i}/{len(df)})...", end="\r")
+            wine = transform_row(row, overrides, vinari_lookup, missing_report, session)
+            wine["sekce"] = assign_sekce(wine["pozice"])
+            wines.append(wine)
+    print()
 
     wines.sort(key=lambda w: w["pozice"])
 

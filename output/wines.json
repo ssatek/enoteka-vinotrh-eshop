@@ -7,6 +7,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství PARTILIA",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/cuvee-jeden-sud-sg-ch/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -31,6 +32,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství THAYA",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-pozdravy-z-np-podyji-4/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -55,6 +57,7 @@
     "jakost": "VOC",
     "vyrobce": "VINICE HNANICE",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-voc-125/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -79,6 +82,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinařství WALDBERG",
     "objem": "0,75 l",
+    "url_vinotrh": null,
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -103,6 +107,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství KACETL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-111/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -127,6 +132,7 @@
     "jakost": "kabinetní",
     "vyrobce": "Vinařství THAYA",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/thaya-pinot-blanc/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -151,6 +157,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Oulehla vinařství",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/hibernal-68/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -175,6 +182,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství SIMENON",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-voc-121/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -199,6 +207,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Oulehla vinařství",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/pinot-gris-30/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -223,6 +232,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-ze-sobesu/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -247,6 +257,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství WALDBERG",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-vlassky-waldberg-2024-p-s-/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -271,6 +282,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství HALKOCI",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-typik/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -295,6 +307,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Farma U tří dubů",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sylvan/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -319,6 +332,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinné sklepy Lechovice",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/cuvee-sg-rr-vz/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -343,6 +357,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-lampelberg-2024-voc/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -367,6 +382,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství Dobrovolný",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-voc-126/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -391,6 +407,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/cuvee-rajska-rajska-vinice-2025-voc/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -415,6 +432,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství Piálek&Jäger",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-extra-11/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -439,6 +457,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Víno PLAČEK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-80/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -463,6 +482,7 @@
     "jakost": "kabinetní",
     "vyrobce": "Vinařství AMPELOS",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-vlassky-39/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -487,6 +507,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství SIMENON",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/pinot-gris-29/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -511,6 +532,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství Špalek",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/cuvee-gryllus-bily/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -535,6 +557,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství THAYA",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-98/",
     "ceny": {
       "vzorek_20ml": 21,
       "vzorek_50ml": 49,
@@ -559,6 +582,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": null,
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -583,6 +607,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "VÍNO HORT",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/znojemsky-muller-thurgau-2024/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -607,6 +632,7 @@
     "jakost": "VOC",
     "vyrobce": "Tasovické vinařství",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-voc-130/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -631,6 +657,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství HANZEL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/muskat-zluty-sac-2025-p-s-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -655,6 +682,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství Piálek&Jäger",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-voc-133/",
     "ceny": {
       "vzorek_20ml": 0,
       "vzorek_50ml": 0,
@@ -679,6 +707,7 @@
     "jakost": "VOC",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-voc-124/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -703,6 +732,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství Piálek&Jäger",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/rulandske-sede-88/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -727,6 +757,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství HALKOCI",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/supa-sucha-palava-2/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -751,6 +782,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství Nešetřil",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/muller-thurgau-fresh/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -775,6 +807,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství AMPELOS",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/kerner-28/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -799,6 +832,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství LÍBAL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-88/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -823,6 +857,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "VINICE HNANICE",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/irsai-oliver-36/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -847,6 +882,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "VINICE HNANICE",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ruladske-bile/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -871,6 +907,7 @@
     "jakost": "VOC",
     "vyrobce": "VÍNO VANĚK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-blanc-voc-15/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -895,6 +932,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství Špalek",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/donauriesling-3/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -919,6 +957,7 @@
     "jakost": "jakostní",
     "vyrobce": "Modrý sklep",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/chardonnay-71/",
     "ceny": {
       "vzorek_20ml": 12,
       "vzorek_50ml": 24,
@@ -943,6 +982,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-sedy-5/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -967,6 +1007,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství Piálek&Jäger",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/hibernal-63/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -991,6 +1032,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství Kořínek",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/johanniter-fresh-2/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -1015,6 +1057,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství HANZEL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/palava-dolina-2024-p-s-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1039,6 +1082,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinařství LÍBAL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-102/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1063,6 +1107,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/tramin-cerveny-jesterka/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1087,6 +1132,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinařství HANZEL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/hibernal-sac-2025-v-h-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1111,6 +1157,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinné sklepy Maršovice",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-87/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1135,6 +1182,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství HANZEL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/chardonnay-u-sv--urbana-2025-p-s-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1159,6 +1207,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/muskat-moravsky-olbramovicka-hora-2024-p-s-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1183,6 +1232,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství PERK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlin-naruby/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1207,6 +1257,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinařství MARKEL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/palava-145/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1231,6 +1282,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství MÜHLBERGER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/tramin-cerveny-81/",
     "ceny": {
       "vzorek_20ml": 21,
       "vzorek_50ml": 49,
@@ -1255,6 +1307,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Víno NÁPRAVA",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/palava-147/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1279,6 +1332,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Modrý sklep",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/tramin-cerveny-83/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1303,6 +1357,7 @@
     "jakost": "výběr z bobulí",
     "vyrobce": "Vinařství AMPELOS",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veritas-22/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1327,6 +1382,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-volne-pole-2022-v-h-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1351,6 +1407,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "VÍNO VANĚK",
     "objem": "0,5 l",
+    "url_vinotrh": "https://www.vinotrh.cz/tramin-zluty-11/",
     "ceny": {
       "vzorek_20ml": 23,
       "vzorek_50ml": 48,
@@ -1375,6 +1432,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Víno PLAČEK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/solaris-18/",
     "ceny": {
       "vzorek_20ml": 21,
       "vzorek_50ml": 49,
@@ -1399,6 +1457,7 @@
     "jakost": "slámové",
     "vyrobce": "Vinné sklepy Lechovice",
     "objem": "0,2 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-slamove-vino-2/",
     "ceny": {
       "vzorek_20ml": 84,
       "vzorek_50ml": 170,
@@ -1423,6 +1482,7 @@
     "jakost": "ledové",
     "vyrobce": "Vinařství Špalek",
     "objem": "0,2 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ledove-veltlinske-zelene-bio/",
     "ceny": {
       "vzorek_20ml": 84,
       "vzorek_50ml": 170,
@@ -1447,6 +1507,7 @@
     "jakost": "kabinetní",
     "vyrobce": "VÍNO VANĚK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/cabernet-sauvignon-rose-35/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1471,6 +1532,7 @@
     "jakost": "známkové",
     "vyrobce": "VÍNO HORT",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/franceska-rose-2025/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1495,6 +1557,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Oulehla vinařství",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/merlot-rose-13/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1519,6 +1582,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Tasovické vinařství",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/andre-rose-2/",
     "ceny": {
       "vzorek_20ml": 0,
       "vzorek_50ml": 0,
@@ -1543,6 +1607,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/rose-lahofer-babicak-2024-p-s-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1567,6 +1632,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství THAYA",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/apri-pinot-noir-2/",
     "ceny": {
       "vzorek_20ml": 28,
       "vzorek_50ml": 61,
@@ -1591,6 +1657,7 @@
     "jakost": "známkové",
     "vyrobce": "VÍNO HORT",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/hf-classique-cuvee-merlot/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -1615,6 +1682,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinné sklepy Lechovice",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/zweigeltrebe-blue-line/",
     "ceny": {
       "vzorek_20ml": 0,
       "vzorek_50ml": 0,
@@ -1639,6 +1707,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Víno PLAČEK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/frankovka-37/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1663,6 +1732,7 @@
     "jakost": "likérové",
     "vyrobce": "Vinařství Špalek",
     "objem": "0,375 l",
+    "url_vinotrh": "https://www.vinotrh.cz/saler-cerveny-2/",
     "ceny": {
       "vzorek_20ml": 24,
       "vzorek_50ml": 46,
@@ -1687,6 +1757,7 @@
     "jakost": "VOC",
     "vyrobce": "VÍNO VANĚK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-voc-122/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1711,6 +1782,7 @@
     "jakost": "VOC",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-voc-124/",
     "ceny": {
       "vzorek_20ml": 0,
       "vzorek_50ml": 0,
@@ -1735,6 +1807,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství Špalek",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-voc-127/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1759,6 +1832,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství Piálek&Jäger",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-voc-128/",
     "ceny": {
       "vzorek_20ml": 0,
       "vzorek_50ml": 0,
@@ -1783,6 +1857,7 @@
     "jakost": "VOC",
     "vyrobce": "Tasovické vinařství",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-voc-129/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -1807,6 +1882,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství HALKOCI",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-83/",
     "ceny": {
       "vzorek_20ml": 0,
       "vzorek_50ml": 0,
@@ -1831,6 +1907,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství SIMENON",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-voc-122/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1855,6 +1932,7 @@
     "jakost": "VOC",
     "vyrobce": "VINICE HNANICE",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-voc-126/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1879,6 +1957,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství Špalek",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-voc-127/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1903,6 +1982,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství Piálek&Jäger",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-voc-128/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1927,6 +2007,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství SIMENON",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-voc-128/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1951,6 +2032,7 @@
     "jakost": "VOC",
     "vyrobce": "VÍNO VANĚK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-voc-129/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -1975,6 +2057,7 @@
     "jakost": "VOC",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-voc-131/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -1999,6 +2082,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinné sklepy Lechovice",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-voc-134/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2023,6 +2107,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství AMPELOS",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-voc-135/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2047,6 +2132,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-vlassky-waldberg-2021-v-h--wave-beton/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2071,6 +2157,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "VÍNO HORT",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/cuvee-granit-vz-rr/",
     "ceny": {
       "vzorek_20ml": 26,
       "vzorek_50ml": 56,
@@ -2095,6 +2182,7 @@
     "jakost": "VOC",
     "vyrobce": "Dobrá vinice",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-kr-voc-znojmo/",
     "ceny": {
       "vzorek_20ml": 28,
       "vzorek_50ml": 61,
@@ -2119,6 +2207,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "DONATUS",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/palava-2023-24-orange/",
     "ceny": {
       "vzorek_20ml": 26,
       "vzorek_50ml": 56,
@@ -2143,6 +2232,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Martin Vajčner",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/just-grapes-2024/",
     "ceny": {
       "vzorek_20ml": 21,
       "vzorek_50ml": 49,
@@ -2167,6 +2257,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Jakub Smrčka",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/riesling-dreiteiler/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2191,6 +2282,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství Žiška",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-vlassky-38/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2215,6 +2307,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Víno Přistál",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/zweigeltrebe-rose-40/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2239,6 +2332,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Frlaus.wine",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-86/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2263,6 +2357,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství Milbach",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-saldorfsky-kravak/",
     "ceny": {
       "vzorek_20ml": 21,
       "vzorek_50ml": 49,
@@ -2287,6 +2382,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství Januš",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/palava-146/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2311,6 +2407,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Element Wine",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/hibernal-67/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2335,6 +2432,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "DIWINE",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/scheurebe-2/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2359,6 +2457,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Pavel Vrba",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/muskat-moravsky-59/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2383,6 +2482,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Ondřej Kubic",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/tramin-cerveny-82/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2407,6 +2507,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/kerner-pirko/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -2431,6 +2532,7 @@
     "jakost": "kabinetní",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/muller-thurgau-volne-pole-2024-kab-/",
     "ceny": {
       "vzorek_20ml": 12,
       "vzorek_50ml": 24,
@@ -2455,6 +2557,7 @@
     "jakost": null,
     "vyrobce": "Vinařství HALKOCI",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlin-fresh-2/",
     "ceny": {
       "vzorek_20ml": 0,
       "vzorek_50ml": 0,
@@ -2479,6 +2582,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství HANZEL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/savilon-volne-pole-2023-p-s-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2503,6 +2607,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Oulehla vinařství",
     "objem": "0,75 l",
+    "url_vinotrh": null,
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2527,6 +2632,7 @@
     "jakost": "VOC",
     "vyrobce": "Vinařství LÍBAL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-voc-115/",
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2551,6 +2657,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství THAYA",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/palava-pozdravy-z-np-podyji/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2575,6 +2682,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství SIMENON",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/moje-cuvee-2025/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2599,6 +2707,7 @@
     "jakost": "výběr z bobulí",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/rulandske-sede-u-hajku-2022-v-b-/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2623,6 +2732,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství AMPELOS",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-at-klony/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2647,6 +2757,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Víno NÁPRAVA",
     "objem": "0,75 l",
+    "url_vinotrh": null,
     "ceny": {
       "vzorek_20ml": 19,
       "vzorek_50ml": 42,
@@ -2671,6 +2782,7 @@
     "jakost": "VOC",
     "vyrobce": "VÍNO VANĚK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-blanc-voc-13/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2695,6 +2807,7 @@
     "jakost": "VOC",
     "vyrobce": "VINICE HNANICE",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/ryzlink-rynsky-voc-132/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2719,6 +2832,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "VINICE HNANICE",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/palava-141/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2743,6 +2857,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "ZNOVÍN ZNOJMO",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/hibernal-66/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2767,6 +2882,7 @@
     "jakost": "moravské zemské",
     "vyrobce": "Vinařství Piálek&Jäger",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/cuvee-saldec-2/",
     "ceny": {
       "vzorek_20ml": 0,
       "vzorek_50ml": 0,
@@ -2791,6 +2907,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Vinařství HANZEL",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/sauvignon-gris-volne-pole-2020-p-s-/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,
@@ -2815,6 +2932,7 @@
     "jakost": "pozdní sběr",
     "vyrobce": "Víno PLAČEK",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/rinot-6/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2839,6 +2957,7 @@
     "jakost": "kabinetní",
     "vyrobce": "Vinařství Špalek",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/zweigeltrebe-rose-bio/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -2863,6 +2982,7 @@
     "jakost": "výběr z hroznů",
     "vyrobce": "Vinařství WALDBERG",
     "objem": "0,75 l",
+    "url_vinotrh": "https://www.vinotrh.cz/rulandske-modre-volne-pole-2021-v-h--3/",
     "ceny": {
       "vzorek_20ml": 14,
       "vzorek_50ml": 30,

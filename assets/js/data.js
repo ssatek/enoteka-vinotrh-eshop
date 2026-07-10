@@ -32,11 +32,19 @@ window.EnoData = (function () {
     return 'https://www.vinotrh.cz/vyhledavani/?string=' + encodeURIComponent(kod);
   }
 
+  // Přímá URL produktu (dohledaná při transform.py, viz wine.url_vinotrh) má
+  // vždy přednost -- fallback na vyhledávání jen pro pár položek, kde se
+  // produkt na vinotrh.cz nedohledal (viz output/k_doplneni.json).
+  function vinotrhUrl(wine) {
+    return wine.url_vinotrh || vinotrhKoupitUrl(wine.kod);
+  }
+
   return {
     loadWines: loadWines,
     loadTemata: loadTemata,
     escapeHtml: escapeHtml,
     barvaClass: barvaClass,
-    vinotrhKoupitUrl: vinotrhKoupitUrl
+    vinotrhKoupitUrl: vinotrhKoupitUrl,
+    vinotrhUrl: vinotrhUrl
   };
 })();

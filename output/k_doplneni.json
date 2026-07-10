@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "pozice": 111,
+    "pole": "URL na vinotrh.cz (nedohledáno)",
+    "detail": "Kód NAP.0036 nevrátil žádnou shodu na vinotrh.cz -- web použije fallback na vyhledávání.",
+    "nazev": "Tramín červený"
+  },
+  {
+    "pozice": 105,
+    "pole": "URL na vinotrh.cz (nedohledáno)",
+    "detail": "Kód TAO.0138 nevrátil žádnou shodu na vinotrh.cz -- web použije fallback na vyhledávání.",
+    "nazev": "Sauvignon Karlov"
+  },
+  {
+    "pozice": 24,
+    "pole": "URL na vinotrh.cz (nedohledáno)",
+    "detail": "Kód ZNO.0448 nevrátil žádnou shodu na vinotrh.cz -- web použije fallback na vyhledávání.",
+    "nazev": "Neuburské z Pekla"
+  },
+  {
+    "pozice": 4,
+    "pole": "URL na vinotrh.cz (nedohledáno)",
+    "detail": "Kód WAL.0414 nevrátil žádnou shodu na vinotrh.cz -- web použije fallback na vyhledávání.",
+    "nazev": "Chardonnay - Lampelberg 2022 v.h."
+  }
+]
