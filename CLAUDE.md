@@ -182,6 +182,16 @@ enoteka_vinotrh.eshop/
     └── transform.py                    # XLSX + Vinari.xlsx + overrides.json -> output/wines.json, implementovaná pravidla viz Data pipeline výše
 ```
 
+## Nasazení
+- **GitHub:** https://github.com/ssatek/enoteka-vinotrh-eshop (public, konvence jako ostatní Vinotrh repa)
+- **Vercel:** projekt `enoteka_vinotrh.eshop`, auto-deploy z `main` při push. Aktuální produkční URL: https://enotekavinotrheshop.vercel.app
+- **Vlastní doména `enoteka.vinotrh.cz`** — přidaná do Vercel projektu, **čeká na DNS záznam u uživatele** (Websupport, stejně jako `menu.vinotrh.cz`):
+  - Typ: **CNAME**
+  - Název: `enoteka`
+  - Hodnota: `cname.vercel-dns.com.`
+  - Po přidání ověřit: `nslookup -type=CNAME enoteka.vinotrh.cz` a `vercel domains verify enoteka.vinotrh.cz`.
+- **Důležitá oprava při prvním nasazení:** relativní cesty (`fetch('output/wines.json')`, `assets/...` v HTML) se na hezké URL `/detail/{pozice}` počítaly špatně (prohlížeč je bral relativně k `/detail/`, ne ke kořeni) → data se nenačetla → přesměrování na vinotrh.cz nikdy neproběhlo. Opraveno na absolutní cesty (`/output/wines.json`, `/assets/...`) všude v `assets/js/*.js` i v obou HTML souborech. Karty na přehledu teď odkazují přímo na `/detail/{pozice}` (dřív `detail.html?pozice=`), stejně jak to budou používat i QR kódy. Ověřeno Playwrightem na produkci: `/detail/2` → `vinotrh.cz/sauvignon-pozdravy-z-np-podyji-4/`.
+
 ## Kontaktní info (pro patičku webu)
 - Adresa: Hradní ulice — areál pivovaru, Znojmo
 - Telefon: 702 203 232
