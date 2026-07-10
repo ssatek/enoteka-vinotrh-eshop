@@ -64,11 +64,13 @@ Uživatel chtěl mít možnost porovnat dvě varianty, aniž by se ztratila ta p
 - Přepnutí: v `assets/js/config.js` změnit `detailMode` na `'vlastni'` nebo zpět na `'redirect'`. Žádné jiné soubory se měnit nemusí.
 
 ## QR kódy
-- **`docs/qr/qr-enoteka-vinotrh.png` + `.svg`** — hotovo. QR kód na `https://enoteka.vinotrh.cz` (obecný, pro signage/tisk), vygenerováno stejně jako u `../menu_vinotrh.eshop`:
+- **`docs/qr/qr-enoteka-vinotrh.png` + `.svg`** — obecný QR na `https://enoteka.vinotrh.cz` (signage/tisk):
   ```
   npx qrcode -o docs/qr/qr-enoteka-vinotrh.png -t png -e H -w 1200 -q 2 -d 1E1F21FF -l FFFFFFFF "https://enoteka.vinotrh.cz"
   ```
-- **120 QR kódů na jednotlivé pozice** — zatím negenerované, čekají na nasazení domény (aby QR neodkazovaly na `localhost`/staging). Až bude doména živá, vygenerovat stejným příkazem pro `https://enoteka.vinotrh.cz/detail/{pozice}` pro pozice 1–120 (skript v `src/`, zatím nenapsaný).
+- **`docs/qr/pozice/`** — **hotovo, 120 QR kódů**, jeden na pozici, každý PNG (600×600) + SVG, cíl `https://enoteka.vinotrh.cz/detail/{pozice}`. Pojmenování `qr-poz-001.png` … `qr-poz-120.png` (zero-padded, ať jde řadit). Stejný styl jako obecný QR (černá `#1E1F21` na bílé, error correction H). Vygenerováno dávkově přes knihovnu `qrcode` (Node) místo 120× `npx` (rychlejší, jeden proces). Ověřeno dekódováním přes OpenCV na 3 vzorcích (poz. 1, 58, 120) — obsah přesně odpovídá URL dané pozice.
+- **`docs/qr/pozice/seznam-pozic.csv`** — tabulka pozice → název vína → kód zboží, pro orientaci při tisku/kontrole (generováno z `output/wines.json`).
+- **Pozor při přegenerování:** pokud se v budoucnu QR kódy budou muset znovu vytisknout (např. po delší době), je nutné je nejdřív znovu vygenerovat ze **stejné** `output/wines.json`, ze které vychází aktuální obsah webu, jinak by CSV seznam (pozice → název) neodpovídal tomu, co je skutečně na dané pozici k ochutnání.
 
 ## Design
 **Rozhodnuto: vychází z `../menu_vinotrh.eshop` (stejný branding, stejné logo), ne z barev tištěné karty.** Uživatel potvrdil převzít design sesterského projektu 1:1, včetně loga.
