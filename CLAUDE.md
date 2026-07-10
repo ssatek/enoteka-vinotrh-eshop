@@ -6,7 +6,7 @@ Webová stránka na subdoméně **enoteka.vinotrh.cz** — digitální obdoba ti
 Sesterský projekt: `../menu_vinotrh.eshop` (nápojový lístek kavárny Enotéky) — sdílí branding, ale je to samostatný web/repo.
 
 ## Stav projektu
-**Nasazeno a živé.** `index.html` (přehled, 120 karet v 9 podsekcích) + `detail.html` (redirect na přímý produkt na vinotrh.cz), data pipeline (`src/transform.py`, dohledává i přímé URL produktů), 120 QR kódů na jednotlivé pozice + obecný QR na doménu, Vercel Web Analytics zapnutá. GitHub → Vercel auto-deploy funguje. Zbývá: DNS záznam u uživatele pro `enoteka.vinotrh.cz` (viz Nasazení), zdroj denní synchronizace dat (viz Otevřené body).
+**Nasazeno, živé na finální doméně `https://enoteka.vinotrh.cz` (HTTPS funkční).** `index.html` (přehled, 120 karet v 9 podsekcích) + `detail.html` (redirect na přímý produkt na vinotrh.cz), data pipeline (`src/transform.py`, dohledává i přímé URL produktů), 120 QR kódů na jednotlivé pozice + obecný QR na doménu, Vercel Web Analytics zapnutá. GitHub → Vercel auto-deploy funguje. Zbývá jen: zdroj denní synchronizace dat (viz Otevřené body) — vše ostatní je hotové a ověřené.
 
 ## Struktura obsahu — 3 sekce
 - **1–70 Stálá nabídka** — 6 podsekcí dle Barva + Typ cukernatosti: Suchá bílá / Polosuchá bílá / Polosladká bílá / Sladká bílá / Růžová / Červená vína, v rámci podsekce řazeno vzestupně dle zbytkového cukru (stejně jako v tištěné kartě). Platí vždy pro období jednoho roku (obměna od června).
@@ -187,11 +187,9 @@ enoteka_vinotrh.eshop/
 ## Nasazení
 - **GitHub:** https://github.com/ssatek/enoteka-vinotrh-eshop (public, konvence jako ostatní Vinotrh repa)
 - **Vercel:** projekt `enoteka_vinotrh.eshop`, auto-deploy z `main` při push. Aktuální produkční URL: https://enotekavinotrheshop.vercel.app
-- **Vlastní doména `enoteka.vinotrh.cz`** — přidaná do Vercel projektu, **čeká na DNS záznam u uživatele** (Websupport, stejně jako `menu.vinotrh.cz`):
-  - Typ: **CNAME**
-  - Název: `enoteka`
-  - Hodnota: `cname.vercel-dns.com.`
-  - Po přidání ověřit: `nslookup -type=CNAME enoteka.vinotrh.cz` a `vercel domains verify enoteka.vinotrh.cz`.
+- **Vlastní doména `enoteka.vinotrh.cz`** — **živá.** CNAME přidán u Websupportu (`enoteka` → přidělený cíl `b8157f6290950485.vercel-dns-017.com.` — Vercel po ověření domény vygeneroval doménově specifický CNAME cíl místo obecného `cname.vercel-dns.com.`, oboje funguje stejně), ověřeno `vercel domains verify` (`configured_correctly`) i `nslookup`.
+  - Po přidání DNS záznamu HTTPS certifikát chvíli chyběl (TLS handshake padal — `schannel`/`SSLEOFError`/`openssl s_client` všechny nezávisle potvrdily stejný stav), i když HTTP (port 80) už fungoval a `vercel domains verify` hlásil `configured_correctly`. Vyřešeno ručním vynucením vydání certifikátu: `npx vercel certs issue enoteka.vinotrh.cz`. Po cca 15 s běžel plný handshake (Let's Encrypt, `CN=enoteka.vinotrh.cz`) a `https://enoteka.vinotrh.cz` vrací 200 na `/`, `/output/wines.json` i `/detail/{pozice}`.
+  - **Poučení pro příští doménu na Vercelu:** pokud po úspěšném `vercel domains verify` HTTPS pořád selhává (HTTP přitom OK), nečekat pasivně — rovnou zkusit `npx vercel certs issue <doména>`, urychlí to vydání certifikátu.
 - **Důležitá oprava při prvním nasazení:** relativní cesty (`fetch('output/wines.json')`, `assets/...` v HTML) se na hezké URL `/detail/{pozice}` počítaly špatně (prohlížeč je bral relativně k `/detail/`, ne ke kořeni) → data se nenačetla → přesměrování na vinotrh.cz nikdy neproběhlo. Opraveno na absolutní cesty (`/output/wines.json`, `/assets/...`) všude v `assets/js/*.js` i v obou HTML souborech. Karty na přehledu teď odkazují přímo na `/detail/{pozice}` (dřív `detail.html?pozice=`), stejně jak to budou používat i QR kódy. Ověřeno Playwrightem na produkci: `/detail/2` → `vinotrh.cz/sauvignon-pozdravy-z-np-podyji-4/`.
 
 ## Vercel Web Analytics
