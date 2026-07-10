@@ -63,6 +63,10 @@
       '<a class="eno-back" href="index.html">' + EnoIcons.arrowLeft + ' Zpět na přehled</a>';
   }
 
+  function isRedirectMode() {
+    return !!(window.EnoConfig && window.EnoConfig.detailMode === 'redirect');
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var pozice = getPozice();
     if (pozice === null) { showError('Neplatná pozice vína.'); return; }
@@ -71,6 +75,13 @@
       .then(function (wines) {
         var wine = wines.filter(function (w) { return w.pozice === pozice; })[0];
         if (!wine) { showError('Víno na pozici ' + pozice + ' nebylo nalezeno.'); return; }
+
+        if (isRedirectMode()) {
+          // Verze "redirect": žádná vlastní stránka, rovnou na produkt na vinotrh.cz.
+          window.location.replace(EnoData.vinotrhKoupitUrl(wine.kod));
+          return;
+        }
+
         render(wine);
       })
       .catch(function (err) {

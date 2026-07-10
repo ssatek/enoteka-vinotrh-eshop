@@ -57,6 +57,12 @@ Sesterský projekt: `../menu_vinotrh.eshop` (nápojový lístek kavárny Enoték
 - **Detail vína:** `enoteka.vinotrh.cz/detail/{pozice}` — název, ročník, odrůda, kategorie/přívlastek, výrobce, objem, alk./cukr/kys., ceny vzorků a lahve.
 - **Tlačítko „Koupit na vinotrh.cz"** → **ověřeno a funguje jednoduše, žádný sync navíc není potřeba.** Odkaz se skládá staticky z kódu, který už máme v datech: `https://www.vinotrh.cz/vyhledavani/?string={kód}` (URL-encoded). Vinotrh.cz běží na Shoptetu, fulltextové hledání podle přesného kódu zboží (`Číslo`, sloupec na jejich straně = „kód zboží") vrátilo ve 2/2 testech přesně 1 shodující se produkt se správnou cenou (ověřeno: `PAR.0058` → „Cuvée Jeden sud SG+CH", 242 Kč; `WAL.0395` → „Rulandské modré – Volné pole 2021 v.h.", 160 Kč — obojí sedí na naše `Cena s DPH`). Riziko: pokud produkt vypadne z nabídky vinotrh.cz, hledání vrátí 0 výsledků — to neřešíme jinak než zobrazením obecného odkazu na vyhledávání.
 
+### Detail vína — dva režimy (přepínatelné v `assets/js/config.js`)
+Uživatel chtěl mít možnost porovnat dvě varianty, aniž by se ztratila ta původní — přepínač `window.EnoConfig.detailMode`:
+- **`'vlastni'` (výchozí, git commit `8f7d88f` jako referenční verze)** — na `/detail/{pozice}` se zobrazí vlastní stránka se všemi meta údaji a tlačítkem „Koupit na Vinotrh.cz".
+- **`'redirect'`** — na `/detail/{pozice}` se nic nezobrazí, JS okamžitě (`window.location.replace`) přesměruje rovnou na `https://www.vinotrh.cz/vyhledavani/?string={kód}`. Ověřeno Playwrightem (poz. 1 → `.../vyhledavani/?string=PAR.0058`, žádné JS chyby).
+- Přepnutí: v `assets/js/config.js` změnit `detailMode` na `'redirect'` nebo zpět na `'vlastni'`. Žádné jiné soubory se měnit nemusí.
+
 ## QR kódy
 - **`docs/qr/qr-enoteka-vinotrh.png` + `.svg`** — hotovo. QR kód na `https://enoteka.vinotrh.cz` (obecný, pro signage/tisk), vygenerováno stejně jako u `../menu_vinotrh.eshop`:
   ```
