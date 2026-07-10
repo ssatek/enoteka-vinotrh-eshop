@@ -59,9 +59,9 @@ Sesterský projekt: `../menu_vinotrh.eshop` (nápojový lístek kavárny Enoték
 
 ### Detail vína — dva režimy (přepínatelné v `assets/js/config.js`)
 Uživatel chtěl mít možnost porovnat dvě varianty, aniž by se ztratila ta původní — přepínač `window.EnoConfig.detailMode`:
-- **`'vlastni'` (výchozí, git commit `8f7d88f` jako referenční verze)** — na `/detail/{pozice}` se zobrazí vlastní stránka se všemi meta údaji a tlačítkem „Koupit na Vinotrh.cz".
-- **`'redirect'`** — na `/detail/{pozice}` se nic nezobrazí, JS okamžitě (`window.location.replace`) přesměruje rovnou na `https://www.vinotrh.cz/vyhledavani/?string={kód}`. Ověřeno Playwrightem (poz. 1 → `.../vyhledavani/?string=PAR.0058`, žádné JS chyby).
-- Přepnutí: v `assets/js/config.js` změnit `detailMode` na `'redirect'` nebo zpět na `'vlastni'`. Žádné jiné soubory se měnit nemusí.
+- **`'redirect'` (aktuálně výchozí)** — kliknutí na kartu vína / vstup na `/detail/{pozice}` nic nezobrazí, JS okamžitě (`window.location.replace`) přesměruje rovnou na `https://www.vinotrh.cz/vyhledavani/?string={kód}`. Ověřeno Playwrightem (poz. 1 → `.../vyhledavani/?string=PAR.0058`, žádné JS chyby).
+- **`'vlastni'` (referenční verze, git commit `8f7d88f`)** — na `/detail/{pozice}` se zobrazí vlastní stránka se všemi meta údaji a tlačítkem „Koupit na Vinotrh.cz".
+- Přepnutí: v `assets/js/config.js` změnit `detailMode` na `'vlastni'` nebo zpět na `'redirect'`. Žádné jiné soubory se měnit nemusí.
 
 ## QR kódy
 - **`docs/qr/qr-enoteka-vinotrh.png` + `.svg`** — hotovo. QR kód na `https://enoteka.vinotrh.cz` (obecný, pro signage/tisk), vygenerováno stejně jako u `../menu_vinotrh.eshop`:
