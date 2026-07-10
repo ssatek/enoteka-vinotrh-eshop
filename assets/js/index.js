@@ -48,7 +48,7 @@
       .map(function (v) { return '<span>' + esc(v) + '</span>'; })
       .join('');
 
-    return '<a class="wine-card wine-card--' + EnoData.barvaClass(wine.barva) + '" href="detail.html?pozice=' + wine.pozice + '">' +
+    return '<a class="wine-card wine-card--' + EnoData.barvaClass(wine.barva) + '" href="/detail/' + wine.pozice + '">' +
       '<div class="wine-card__head">' +
       '<span class="wine-card__num">' + wine.pozice + '</span>' +
       '<div class="wine-card__titles">' +

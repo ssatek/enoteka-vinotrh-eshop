@@ -4,12 +4,12 @@ window.EnoData = (function () {
   var temataPromise = null;
 
   function loadWines() {
-    if (!winesPromise) winesPromise = fetch('output/wines.json').then(function (r) { return r.json(); });
+    if (!winesPromise) winesPromise = fetch('/output/wines.json').then(function (r) { return r.json(); });
     return winesPromise;
   }
 
   function loadTemata() {
-    if (!temataPromise) temataPromise = fetch('data/tematicka_nabidka.json').then(function (r) { return r.json(); });
+    if (!temataPromise) temataPromise = fetch('/data/tematicka_nabidka.json').then(function (r) { return r.json(); });
     return temataPromise;
   }
 

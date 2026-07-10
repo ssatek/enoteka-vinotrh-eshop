@@ -60,7 +60,7 @@
   function showError(message) {
     document.getElementById('eno-detail-content').innerHTML =
       '<p class="eno-state">' + esc(message) + '</p>' +
-      '<a class="eno-back" href="index.html">' + EnoIcons.arrowLeft + ' Zpět na přehled</a>';
+      '<a class="eno-back" href="/">' + EnoIcons.arrowLeft + ' Zpět na přehled</a>';
   }
 
   function isRedirectMode() {
