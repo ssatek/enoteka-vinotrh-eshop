@@ -6,7 +6,7 @@ Webová stránka na subdoméně **enoteka.vinotrh.cz** — digitální obdoba ti
 Sesterský projekt: `../menu_vinotrh.eshop` (nápojový lístek kavárny Enotéky) — sdílí branding, ale je to samostatný web/repo.
 
 ## Stav projektu
-**Web je postavený a funkční** — `index.html` (přehled, 120 karet v 9 podsekcích) + `detail.html` (detail vína s CTA na vinotrh.cz), data pipeline (`src/transform.py`) i QR kód na `enoteka.vinotrh.cz` hotové. Otestováno lokálně přes Playwright (viz Testování níže). Zbývá: 120 QR kódů na jednotlivé pozice (čeká na nasazení domény), a doladění designu/obsahu podle zpětné vazby.
+**Nasazeno a živé.** `index.html` (přehled, 120 karet v 9 podsekcích) + `detail.html` (redirect na přímý produkt na vinotrh.cz), data pipeline (`src/transform.py`, dohledává i přímé URL produktů), 120 QR kódů na jednotlivé pozice + obecný QR na doménu, Vercel Web Analytics zapnutá. GitHub → Vercel auto-deploy funguje. Zbývá: DNS záznam u uživatele pro `enoteka.vinotrh.cz` (viz Nasazení), zdroj denní synchronizace dat (viz Otevřené body).
 
 ## Struktura obsahu — 3 sekce
 - **1–70 Stálá nabídka** — 6 podsekcí dle Barva + Typ cukernatosti: Suchá bílá / Polosuchá bílá / Polosladká bílá / Sladká bílá / Růžová / Červená vína, v rámci podsekce řazeno vzestupně dle zbytkového cukru (stejně jako v tištěné kartě). Platí vždy pro období jednoho roku (obměna od června).
