@@ -194,6 +194,9 @@ enoteka_vinotrh.eshop/
   - Po přidání ověřit: `nslookup -type=CNAME enoteka.vinotrh.cz` a `vercel domains verify enoteka.vinotrh.cz`.
 - **Důležitá oprava při prvním nasazení:** relativní cesty (`fetch('output/wines.json')`, `assets/...` v HTML) se na hezké URL `/detail/{pozice}` počítaly špatně (prohlížeč je bral relativně k `/detail/`, ne ke kořeni) → data se nenačetla → přesměrování na vinotrh.cz nikdy neproběhlo. Opraveno na absolutní cesty (`/output/wines.json`, `/assets/...`) všude v `assets/js/*.js` i v obou HTML souborech. Karty na přehledu teď odkazují přímo na `/detail/{pozice}` (dřív `detail.html?pozice=`), stejně jak to budou používat i QR kódy. Ověřeno Playwrightem na produkci: `/detail/2` → `vinotrh.cz/sauvignon-pozdravy-z-np-podyji-4/`.
 
+## Vercel Web Analytics
+Zapnuto (`npx vercel project web-analytics`) + tracking script (`/_vercel/insights/script.js`) přidaný do `index.html` i `detail.html` (viz [oficiální postup](https://vercel.com/docs/analytics/quickstart) pro statické weby bez frameworku — dvojice `<script>` tagů, `window.va` inline init + `defer src="/_vercel/insights/script.js"`). Ověřeno na produkci: `/_vercel/insights/script.js` vrací 200. Data se zobrazí v Vercel dashboardu (Analytics tab) po nasbírání návštěv.
+
 ## Kontaktní info (pro patičku webu)
 - Adresa: Hradní ulice — areál pivovaru, Znojmo
 - Telefon: 702 203 232
