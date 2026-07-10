@@ -1,0 +1,8 @@
+{
+  "nazev_sekce": "Vína VOC Znojmo ročníku 2025",
+  "podsekce": [
+    { "nazev": "Vína VOC Znojmo ročníku 2025", "od": 71, "do": 85 },
+    { "nazev": "Speciality", "od": 86, "do": 90 },
+    { "nazev": "Vína malých vinařů", "od": 91, "do": 100 }
+  ]
+}

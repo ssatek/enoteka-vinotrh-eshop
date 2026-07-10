@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/detail/:pozice", "destination": "/detail.html" }
+  ]
+}

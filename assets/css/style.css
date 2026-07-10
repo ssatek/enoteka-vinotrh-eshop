@@ -1,0 +1,524 @@
+/* === ENOTÉKA ZNOJEMSKÝCH VÍN — Digitální vinná karta (120 pozic) ===
+   Paleta a typografie převzaty 1:1 z ../menu_vinotrh.eshop (černá + krémová + olivová,
+   display font Jost, tělový font Source Sans 3). */
+
+:root {
+  --color-black:      #1E1F21;
+  --color-black-soft: #252729;
+  --color-olive:      #8CA334;
+  --color-olive-dark: #6E8028;
+  --color-cream:      #F6F3EC;
+  --color-cream-deep: #EFEADD;
+  --color-white:      #FFFFFF;
+  --color-text:       #252729;
+  --color-text-light: #706F6D;
+  --color-rule:       rgba(37,39,41,0.14);
+
+  --color-rose:    #B96A5A;
+  --color-red:     #6E2A2A;
+
+  --font-display: 'Jost', system-ui, sans-serif;
+  --font-body:    'Source Sans 3', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-cream);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+/* === HEADER (shodné s menu_vinotrh.eshop) === */
+.eno-header {
+  position: relative;
+  background: var(--color-black);
+  color: var(--color-cream);
+  padding: 2.8rem 6% 2.4rem;
+  overflow: hidden;
+}
+
+.eno-header__inner { position: relative; z-index: 1; max-width: 64rem; }
+
+.eno-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-olive);
+  margin-bottom: 1.1rem;
+}
+
+.eno-header__title { line-height: 0; }
+
+.eno-header__logo {
+  width: clamp(200px, 40vw, 300px);
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.eno-header__tag {
+  display: inline-block;
+  margin-top: 1.3rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  background: var(--color-olive);
+  padding: 0.4rem 0.9rem;
+  border-radius: 2px;
+}
+
+.eno-header__place {
+  margin-top: 1.1rem;
+  font-size: 0.86rem;
+  color: rgba(246,243,236,0.6);
+  max-width: 26rem;
+}
+
+.eno-header__mark {
+  position: absolute;
+  top: 1.6rem;
+  right: 6%;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+}
+
+.eno-header__mark circle { fill: none; stroke: var(--color-olive); stroke-width: 1.3; opacity: 0.7; }
+.eno-header__mark .berry { fill: var(--color-olive); opacity: 0.85; }
+
+/* === QUICK NAV === */
+.quicknav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.quicknav-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 2.6rem;
+  background: linear-gradient(to right, rgba(246,243,236,0) 0%, var(--color-cream) 82%);
+  pointer-events: none;
+}
+
+.quicknav {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.8rem 6%;
+}
+
+.quicknav::-webkit-scrollbar { display: none; }
+
+.quicknav a {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+  background: var(--color-white);
+  border: 1px solid var(--color-rule);
+  border-radius: 2px;
+  padding: 0.44rem 0.95rem;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.quicknav a.is-active,
+.quicknav a:active {
+  background: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* === MAIN / SECTIONS === */
+.eno-main {
+  position: relative;
+  z-index: 1;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0.5rem 6% 1rem;
+}
+
+.eno-section {
+  padding: 2.6rem 0 1rem;
+  scroll-margin-top: 3.6rem;
+}
+
+.eno-section__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.eno-section__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.eno-section__range {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  color: var(--color-olive-dark);
+  letter-spacing: 0.04em;
+}
+
+.eno-section__note {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 1.2rem;
+}
+
+.eno-subsection { margin-bottom: 2rem; scroll-margin-top: 3.6rem; }
+
+.eno-subsection__title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: var(--color-olive-dark);
+  padding: 0.55rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+}
+
+.eno-subsection__title--rose { background: var(--color-rose); }
+.eno-subsection__title--red  { background: var(--color-red); }
+
+/* === WINE CARD GRID === */
+.eno-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+}
+
+@media (min-width: 640px) {
+  .eno-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 960px) {
+  .eno-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.wine-card {
+  display: block;
+  background: var(--color-white);
+  border: 1px solid var(--color-rule);
+  border-radius: 4px;
+  padding: 1rem 1.1rem 1.05rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.wine-card:hover,
+.wine-card:focus-visible {
+  border-color: var(--color-olive);
+  box-shadow: 0 4px 14px rgba(37,39,41,0.08);
+  transform: translateY(-1px);
+}
+
+.wine-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.wine-card__num {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--color-olive-dark);
+  border: 1px solid var(--color-olive);
+  border-radius: 50%;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wine-card--ruzove .wine-card__num { color: var(--color-rose); border-color: var(--color-rose); }
+.wine-card--cervene .wine-card__num { color: var(--color-red); border-color: var(--color-red); }
+
+.wine-card__titles { min-width: 0; }
+
+.wine-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-black);
+  line-height: 1.25;
+}
+
+.wine-card__kod {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+  margin-top: 0.15rem;
+}
+
+.wine-card__meta {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.75rem;
+}
+
+.wine-card__meta span:not(:last-child)::after { content: ' · '; }
+
+.wine-card__row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-top: 0.55rem;
+  border-top: 1px dashed var(--color-rule);
+}
+
+.wine-card__row + .wine-card__row { border-top: none; padding-top: 0.3rem; }
+
+.wine-card__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-olive-dark);
+}
+
+.wine-card__item svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--color-text-light); }
+.wine-card__row--bottles .wine-card__item svg { color: var(--color-olive-dark); }
+
+/* === DETAIL PAGE === */
+.eno-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-olive);
+  margin-bottom: 1rem;
+}
+
+.eno-back svg { width: 14px; height: 14px; }
+
+.eno-detail {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 6% 3rem;
+}
+
+.eno-detail__num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-olive-dark);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.eno-detail__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.9rem;
+  color: var(--color-black);
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.eno-detail__vyrobce {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin-bottom: 1.4rem;
+}
+
+.eno-detail__meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem 1.2rem;
+  background: var(--color-cream-deep);
+  border-radius: 4px;
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.eno-detail__meta dt {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.eno-detail__meta dd { font-size: 0.95rem; color: var(--color-black); margin-top: 0.15rem; }
+
+.eno-detail__prices { margin-bottom: 1.8rem; }
+
+.eno-detail__prices h2 {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  margin-bottom: 0.7rem;
+}
+
+.eno-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dotted var(--color-rule);
+  font-size: 0.95rem;
+}
+
+.eno-price-row__label { display: flex; align-items: center; gap: 0.5rem; color: var(--color-text); }
+.eno-price-row__label svg { width: 18px; height: 18px; color: var(--color-text-light); }
+.eno-price-row__value { font-family: var(--font-display); font-weight: 600; color: var(--color-olive-dark); }
+
+.eno-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.2rem;
+  border-radius: 2px;
+  transition: background 0.25s ease;
+}
+
+.eno-cta:hover { background: var(--color-olive-dark); }
+.eno-cta svg { width: 15px; height: 15px; }
+
+.eno-state {
+  text-align: center;
+  padding: 3rem 6%;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+/* === FOOTER (shodné s menu_vinotrh.eshop) === */
+.eno-footer {
+  background: var(--color-black-soft);
+  color: var(--color-cream);
+  text-align: center;
+  padding: 3rem 6% 3.5rem;
+  margin-top: 2rem;
+}
+
+.eno-footer__logo {
+  height: 24px;
+  margin: 0 auto 1.2rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+
+.eno-footer__name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+  color: var(--color-olive);
+  margin-bottom: 0.5rem;
+}
+
+.eno-footer__address {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: rgba(246,243,236,0.6);
+  margin-bottom: 1.2rem;
+}
+
+.eno-footer__contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(246,243,236,0.85);
+  margin-bottom: 1.6rem;
+}
+
+.eno-footer__contact a:hover { color: var(--color-olive); }
+.eno-footer__contact span { color: rgba(246,243,236,0.3); }
+
+.eno-footer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.eno-footer__nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 2px;
+  padding: 0.55rem 1.3rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.eno-footer__nav:hover {
+  background: var(--color-olive);
+  border-color: var(--color-olive);
+  color: var(--color-black);
+}
+
+/* === RESPONSIVE — larger screens (secondary; primary target is mobile) === */
+@media (min-width: 640px) {
+  .eno-header { padding: 3.6rem 4% 3rem; }
+  .quicknav { padding: 0.9rem 4%; justify-content: center; }
+  .eno-main { padding: 0.5rem 4% 1.5rem; }
+}

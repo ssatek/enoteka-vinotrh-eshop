@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Enotéka znojemských vín — Vinná karta</title>
+  <meta name="description" content="Digitální vinná karta Enotéky znojemských vín — 120 vzorků vín ze Znojemské vinařské podoblasti, degustační místnost By the Glass®, Hradní ulice, Znojmo." />
+  <meta name="theme-color" content="#1E1F21" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="eno-header">
+    <div class="eno-header__inner">
+      <p class="eno-header__eyebrow">Vinotrh · Znojmo</p>
+      <h1 class="eno-header__title">
+        <img class="eno-header__logo" src="assets/images/logo/enoteka-logo.png" alt="Enotéka znojemských vín" />
+      </h1>
+      <span class="eno-header__tag">120 vzorků vín · By the Glass®</span>
+      <p class="eno-header__place">Hradní ulice — areál pivovaru, Znojmo. Vína ze Znojemské vinařské podoblasti, degustace v samoobslužných vinných automatech.</p>
+    </div>
+    <svg class="eno-header__mark" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="18"/>
+      <circle class="berry" cx="20" cy="13" r="2.6"/>
+      <circle class="berry" cx="14" cy="18" r="2.6"/>
+      <circle class="berry" cx="26" cy="18" r="2.6"/>
+      <circle class="berry" cx="20" cy="23" r="2.6"/>
+      <circle class="berry" cx="14" cy="27" r="2.2"/>
+      <circle class="berry" cx="26" cy="27" r="2.2"/>
+    </svg>
+  </header>
+
+  <!-- QUICK NAV -->
+  <div class="quicknav-wrap">
+    <nav class="quicknav" id="quicknav" aria-label="Sekce vinné karty">
+      <a href="#stala">Stálá nabídka 1–70</a>
+      <a href="#tematicka">Tematická nabídka 71–100</a>
+      <a href="#aktualni">Aktuální nabídka 101–120</a>
+    </nav>
+  </div>
+
+  <main class="eno-main" id="eno-main">
+
+    <section class="eno-section" id="stala">
+      <div class="eno-section__head">
+        <h2 class="eno-section__title">Stálá nabídka</h2>
+        <span class="eno-section__range">pozice 1–70</span>
+      </div>
+      <p class="eno-section__note">Vína pro období jednoho roku, obměna vždy od června. Řazeno vzestupně podle obsahu zbytkového cukru.</p>
+      <div id="stala-obsah"></div>
+    </section>
+
+    <section class="eno-section" id="tematicka">
+      <div class="eno-section__head">
+        <h2 class="eno-section__title">Tematická nabídka</h2>
+        <span class="eno-section__range">pozice 71–100</span>
+      </div>
+      <p class="eno-section__note">Nabídka se čtvrtletně obměňuje.</p>
+      <div id="tematicka-obsah"></div>
+    </section>
+
+    <section class="eno-section" id="aktualni">
+      <div class="eno-section__head">
+        <h2 class="eno-section__title">Aktuální nabídka</h2>
+        <span class="eno-section__range">pozice 101–120</span>
+      </div>
+      <p class="eno-section__note">Vína podávaná v prostorách kavárny Enotéky.</p>
+      <div id="aktualni-obsah"></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="eno-footer">
+    <a href="https://www.vinotrh.cz" target="_blank" rel="noopener" aria-label="Přejít na Vinotrh.cz">
+      <img class="eno-footer__logo" src="assets/images/logo/vinotrh_logo.png" alt="Vinotrh" />
+    </a>
+    <p class="eno-footer__name">Enotéka znojemských vín</p>
+    <address class="eno-footer__address">
+      Hradní ulice — areál pivovaru, Znojmo
+    </address>
+    <div class="eno-footer__contact">
+      <a href="tel:+420702203232">702 203 232</a>
+      <span aria-hidden="true">·</span>
+      <a href="mailto:enoteka@vinotrh.cz">enoteka@vinotrh.cz</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://www.vinotrh.cz/enoteka" target="_blank" rel="noopener">vinotrh.cz/enoteka</a>
+    </div>
+    <div class="eno-footer__actions">
+      <a class="eno-footer__nav" href="https://www.google.com/maps/dir/?api=1&destination=Hradn%C3%AD+ulice%2C+are%C3%A1l+pivovaru%2C+Znojmo" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+        </svg>
+        Navigovat
+      </a>
+      <a class="eno-footer__nav" href="https://www.vinotrh.cz" target="_blank" rel="noopener">
+        Nakoupit víno na Vinotrh.cz
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+</html>

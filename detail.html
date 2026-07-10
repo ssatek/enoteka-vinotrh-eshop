@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Detail vína — Enotéka znojemských vín</title>
+  <meta name="theme-color" content="#1E1F21" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <header class="eno-header">
+    <div class="eno-header__inner">
+      <p class="eno-header__eyebrow">Vinotrh · Znojmo</p>
+      <h1 class="eno-header__title">
+        <img class="eno-header__logo" src="assets/images/logo/enoteka-logo.png" alt="Enotéka znojemských vín" />
+      </h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="eno-detail">
+      <a class="eno-back" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+          <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Zpět na přehled
+      </a>
+      <div id="eno-detail-content">
+        <p class="eno-state">Načítám…</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="eno-footer">
+    <a href="https://www.vinotrh.cz" target="_blank" rel="noopener" aria-label="Přejít na Vinotrh.cz">
+      <img class="eno-footer__logo" src="assets/images/logo/vinotrh_logo.png" alt="Vinotrh" />
+    </a>
+    <p class="eno-footer__name">Enotéka znojemských vín</p>
+    <address class="eno-footer__address">
+      Hradní ulice — areál pivovaru, Znojmo
+    </address>
+    <div class="eno-footer__contact">
+      <a href="tel:+420702203232">702 203 232</a>
+      <span aria-hidden="true">·</span>
+      <a href="mailto:enoteka@vinotrh.cz">enoteka@vinotrh.cz</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://www.vinotrh.cz/enoteka" target="_blank" rel="noopener">vinotrh.cz/enoteka</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/detail.js"></script>
+</body>
+</html>
