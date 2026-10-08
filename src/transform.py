@@ -1,9 +1,9 @@
 """
-Transform pipeline: data/VINOTRH karta tisk II.xlsx (list S4WData) -> output/wines.json
+Transform pipeline: data/Enoteka_pozice.xlsx -> output/wines.json
 
-Zdrojový XLSX se bude denně přepisovat automatickou synchronizací (viz CLAUDE.md,
-Otevřené body č. 1) -- NIKDY needituj přímo v něm, oprava by se ztratila při dalším
-importu. Ruční výjimky (chybějící/sporné hodnoty u konkrétních pozic) patří do
+Zdrojový XLSX je denní export z ERP (Y:\enoteka\Enoteka_pozice.xlsx), do data/
+ho kopíruje src/sync.ps1 -- NIKDY needituj přímo v něm, oprava by se ztratila při
+dalším importu. Ruční výjimky (chybějící/sporné hodnoty u konkrétních pozic) patří do
 data/overrides.json, který sync nepřepisuje.
 
 Položky, které musí být vyplněné, ale nejdou dopočítat pravidlem (typicky
@@ -21,8 +21,41 @@ import requests
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE_XLSX = ROOT / "data" / "VINOTRH karta tisk II.xlsx"
-SOURCE_SHEET = "S4WData"
+SOURCE_XLSX = ROOT / "data" / "Enoteka_pozice.xlsx"
+
+# Export z ERP má technické názvy sloupců -- přejmenují se na původní názvy
+# z tištěné karty, se kterými pracuje zbytek skriptu.
+SOURCE_COLUMNS = {
+    "ENO_Pozice": "Enotéka pozice",
+    "Nazev": "Název",
+    "Artikl_nazev": "Název.1",
+    "Typ_cukernatosti": "Typ cukernatosti",
+    "Rocnik": "Ročník",
+    "Jakost": "Jakost",
+    "Firma": "Firma",
+    "Baleni": "Balení",
+    "Cena_20_ml": "Cena vzorek 20 ml",
+    "Cena_50_ml": "Cena vzorek 50 ml",
+    "Cena_100_ml": "Cena vzorek 100 ml",
+    "Cena_v_res": "Cena v res",
+    "Cena_s_DPH": "Cena s DPH",
+    "Artikl_cislo": "Číslo",
+    "Alkohol": "Alkohol",
+    "Zybtkovy_cukr": "Zbytkový cukr",
+    "Kyseliny": "Kyseliny",
+    "Barva": "Barva",
+    "Odruda": "Odrůda",
+}
+
+# ERP exportuje Typ cukernatosti jako interní ID číselníku, ne jako text.
+# Ověřeno proti Y:\MasterData\ARTIKLY.csv (8. 10. 2026, 117 vín, 100% shoda).
+CUKERNATOST_KODY = {
+    "GR9XJ9TIDW": "suché",
+    "GR6YQ17SEI": "polosuché",
+    "GRGTUA0TIH": "polosladké",
+    "GRVP15JT2B": "sladké",
+}
+EXPECTED_POZICE = set(range(1, 121))
 VINARI_XLSX = ROOT / "data" / "Vinari.xlsx"
 VINARI_SHEET = "Prefixy"
 OVERRIDES_JSON = ROOT / "data" / "overrides.json"
@@ -63,7 +96,25 @@ def resolve_vinotrh_url(kod: str, session: requests.Session) -> str | None:
 
 
 def load_source() -> pd.DataFrame:
-    return pd.read_excel(SOURCE_XLSX, sheet_name=SOURCE_SHEET)
+    """
+    Načte export z ERP a ověří, že je kompletní -- poškozený nebo neúplný export
+    nesmí přepsat živý web, proto se při chybě skončí dřív, než se cokoli zapíše.
+    """
+    df = pd.read_excel(SOURCE_XLSX)
+    chybi = set(SOURCE_COLUMNS) - set(df.columns)
+    if chybi:
+        raise SystemExit(f"Export {SOURCE_XLSX.name} nemá sloupce: {sorted(chybi)}")
+    df = df.rename(columns=SOURCE_COLUMNS)
+    # ERP nechává v textech mezery na konci ("Veltlínské zelené ")
+    for col in df.select_dtypes(include="object").columns:
+        df[col] = df[col].map(lambda v: v.strip() if isinstance(v, str) else v)
+    pozice = df["Enotéka pozice"].dropna().astype(int)
+    if pozice.duplicated().any() or set(pozice) != EXPECTED_POZICE or len(df) != len(EXPECTED_POZICE):
+        raise SystemExit(
+            f"Export {SOURCE_XLSX.name} nemá přesně pozice 1-120 bez duplicit "
+            f"({len(df)} řádků, duplicity: {sorted(pozice[pozice.duplicated()].unique())})"
+        )
+    return df
 
 
 def load_vinari_lookup() -> dict:
@@ -139,6 +190,32 @@ def resolve_cukernatost(row: pd.Series, wine_overrides: dict, missing_report: li
             "firma_raw": row["Firma"],
         })
         return None
+    value = str(value).strip()
+    if value in CUKERNATOST_KODY.values():
+        return value
+    if value not in CUKERNATOST_KODY:
+        missing_report.append({
+            "pozice": int(row["Enotéka pozice"]),
+            "pole": "Typ cukernatosti (neznámý kód)",
+            "detail": f'Kód "{value}" chybí v CUKERNATOST_KODY v src/transform.py',
+            "nazev": resolve_nazev(row, wine_overrides),
+        })
+        return None
+    return CUKERNATOST_KODY[value]
+
+
+def resolve_barva(row: pd.Series, wine_overrides: dict, missing_report: list):
+    """Musí být vyplněná (řídí zařazení do podsekce a barvu karty) -- chybí-li, jde do reportu."""
+    if "barva" in wine_overrides:
+        return wine_overrides["barva"]
+    value = row["Barva"]
+    if pd.isna(value):
+        missing_report.append({
+            "pozice": int(row["Enotéka pozice"]),
+            "pole": "Barva",
+            "nazev": resolve_nazev(row, wine_overrides),
+        })
+        return None
     return value
 
 
@@ -206,7 +283,7 @@ def transform_row(row: pd.Series, overrides: dict, vinari_lookup: dict, missing_
         "alkohol": clean_decimal(row["Alkohol"]),
         "cukr": clean_decimal(row["Zbytkový cukr"]),
         "kyseliny": clean_decimal(row["Kyseliny"]),
-        "barva": row["Barva"],
+        "barva": resolve_barva(row, wine_overrides, missing_report),
         "odruda": row["Odrůda"],
     }
 

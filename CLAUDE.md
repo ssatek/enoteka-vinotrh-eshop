@@ -6,14 +6,23 @@ Webová stránka na subdoméně **enoteka.vinotrh.cz** — digitální obdoba ti
 Sesterský projekt: `../menu_vinotrh.eshop` (nápojový lístek kavárny Enotéky) — sdílí branding, ale je to samostatný web/repo.
 
 ## Stav projektu
-**Nasazeno, živé na finální doméně `https://enoteka.vinotrh.cz` (HTTPS funkční).** `index.html` (přehled, 120 karet v 9 podsekcích) + `detail.html` (redirect na přímý produkt na vinotrh.cz), data pipeline (`src/transform.py`, dohledává i přímé URL produktů), 120 QR kódů na jednotlivé pozice + obecný QR na doménu, Vercel Web Analytics zapnutá. GitHub → Vercel auto-deploy funguje. Zbývá jen: zdroj denní synchronizace dat (viz Otevřené body) — vše ostatní je hotové a ověřené.
+**Nasazeno, živé na finální doméně `https://enoteka.vinotrh.cz` (HTTPS funkční).** `index.html` (přehled, 120 karet v 9 podsekcích) + `detail.html` (redirect na přímý produkt na vinotrh.cz), data pipeline (`src/transform.py`, dohledává i přímé URL produktů), 120 QR kódů na jednotlivé pozice + obecný QR na doménu, Vercel Web Analytics zapnutá. GitHub → Vercel auto-deploy funguje. **Od 8. 10. 2026 běží denní automatická synchronizace z ERP** (viz Denní synchronizace níže).
 
 ## Struktura obsahu — 3 sekce
 - **1–70 Stálá nabídka** — 6 podsekcí dle Barva + Typ cukernatosti: Suchá bílá / Polosuchá bílá / Polosladká bílá / Sladká bílá / Růžová / Červená vína, v rámci podsekce řazeno vzestupně dle zbytkového cukru (stejně jako v tištěné kartě). Platí vždy pro období jednoho roku (obměna od června).
 - **71–100 Tematická nabídka** — mění se čtvrtletně. Aktuálně: „Vína VOC Znojmo ročníku 2025" (71–85), „Speciality" (86–90), „Vína malých vinařů" (91–100).
 - **101–120 Aktuální nabídka** — vína podávaná v prostorách kavárny.
 
-## Zdroj dat
+## Denní synchronizace (od 8. 10. 2026)
+- **Zdroj:** export z ERP `Y:\enoteka\Enoteka_pozice.xlsx` (UNC `\ZNOJMO\LahoferFTP\enoteka\Enoteka_pozice.xlsx`), 120 řádků, technické názvy sloupců (`ENO_Pozice`, `Artikl_cislo`, `Cena_20_ml`…) — `transform.py` je přejmenuje na původní (`SOURCE_COLUMNS`). Na `W:\ENOTEKA\` je starší kopie, nepoužívá se.
+- **`Typ_cukernatosti` je v exportu interní ID číselníku**, ne text — převod v `CUKERNATOST_KODY` (`transform.py`), ověřeno proti `Y:\MasterData\ARTIKLY.csv`. Neznámý kód → `k_doplneni.json`.
+- **`src/sync.ps1`:** `git pull` → kopie exportu do `data/Enoteka_pozice.xlsx` → `transform.py` → pokud se změnil `output/wines.json` nebo `k_doplneni.json`, commit těchto souborů + xlsx a push do `main` (Vercel nasadí sám). Beze změny dat se nic necommituje. Log v `logs/sync.log` (není v gitu).
+- **Ochrana webu:** `transform.py` skončí bez zápisu, pokud export nemá všechny sloupce nebo přesně pozice 1–120 bez duplicit.
+- **Naplánovaná úloha Windows `EnotekaVinotrh-Sync`** — denně 4:00, jen při přihlášeném uživateli (kvůli Git Credential Manageru), zmeškaný běh se dožene po zapnutí PC. Ruční spuštění: `Start-ScheduledTask EnotekaVinotrh-Sync` nebo `powershell -File src\sync.ps1`.
+- **`data/overrides.json`** drží cukernatost pozic 81, 87, 115 (v ERP chybí, hodnoty převzaté z dřívější ruční opravy) — po doplnění v ERP lze smazat.
+- Původní ruční zdroj `data/VINOTRH karta tisk II.xlsx` (list `S4WData`) už se nepoužívá; popis jeho sloupců níže platí obsahově i pro export z ERP.
+
+## Zdroj dat (původní ruční XLSX — historie)
 - **Soubor:** `data/VINOTRH karta tisk II.xlsx`, list `S4WData`.
 - **Aktuální obsah:** 120 řádků, všechny `Enotéka = "ano"` (soubor je již přefiltrovaný na enotéku), pozice 1–120 kompletní, žádné duplicity ani mezery.
 - **Sloupce v souboru → pole na webu:**
@@ -135,9 +144,8 @@ Uživatel chtěl mít možnost porovnat dvě varianty, aniž by se ztratila ta p
 - QR kód na `enoteka.vinotrh.cz` (obecný) — `docs/qr/qr-enoteka-vinotrh.png`/`.svg`.
 
 **Zbývá:**
-1. **120 QR kódů na jednotlivé pozice** — čekají na nasazení domény (viz QR kódy výše).
-2. **Zdroj denní synchronizace** — čeká na uživatele, zatím není blokující, `output/wines.json` se dá kdykoli přegenerovat ručně (`py -3 src/transform.py`).
-3. **Nasazení** — GitHub repo + Vercel link + DNS na `enoteka.vinotrh.cz` (postup viz root `01-projects/CLAUDE.md`, sekce „Deploy statických webů").
+- QR kódy, nasazení i denní synchronizace jsou hotové.
+- V ERP doplnit: cukernatost u pozic 81, 87, 115 (zatím přes `overrides.json`), barvu u pozice 90 (Ryšák, VAJ.0099) — aktuální seznam vždy v `output/k_doplneni.json`.
 
 ## Testování
 - **Nikdy neotvírej `index.html`/`detail.html` dvojklikem (`file://` protokol) — data se nenačtou, karty zůstanou prázdné.** `fetch()` na `output/wines.json` je prohlížečem blokovaný přes `file://` schéma (`URL scheme "file" is not supported"`). Ověřeno Playwrightem — 0 karet, `TypeError: Failed to fetch`. Stalo se to uživateli 2× (dvojklik na soubor místo přes server) — proto **`spustit-lokalne.bat`** (dvojklik spustí lokální server a rovnou otevře `http://localhost:5715/index.html` ve výchozím prohlížeči). Na produkci (Vercel, skutečné HTTP) to problém není, týká se to jen lokálního otevření souboru.
