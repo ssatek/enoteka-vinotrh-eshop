@@ -18,7 +18,7 @@ Sesterský projekt: `../menu_vinotrh.eshop` (nápojový lístek kavárny Enoték
 - **`Typ_cukernatosti` je v exportu interní ID číselníku**, ne text — převod v `CUKERNATOST_KODY` (`transform.py`), ověřeno proti `Y:\MasterData\ARTIKLY.csv`. Neznámý kód → `k_doplneni.json`.
 - **`src/sync.ps1`:** `git pull` → kopie exportu do `data/Enoteka_pozice.xlsx` → `transform.py` → pokud se změnil `output/wines.json` nebo `k_doplneni.json`, commit těchto souborů + xlsx a push do `main` (Vercel nasadí sám). Beze změny dat se nic necommituje. Log v `logs/sync.log` (není v gitu).
 - **Ochrana webu:** `transform.py` skončí bez zápisu, pokud export nemá všechny sloupce nebo přesně pozice 1–120 bez duplicit.
-- **Naplánovaná úloha Windows `EnotekaVinotrh-Sync`** — denně 4:00, jen při přihlášeném uživateli (kvůli Git Credential Manageru), zmeškaný běh se dožene po zapnutí PC. Ruční spuštění: `Start-ScheduledTask EnotekaVinotrh-Sync` nebo `powershell -File src\sync.ps1`.
+- **Naplánovaná úloha Windows `EnotekaVinotrh-Sync`** — denně 4:00 **a 2 min po každém přihlášení** (uživatel ve 4:00 většinou přihlášený není, úloha běží jen v jeho relaci kvůli Git Credential Manageru a disku Y:). Opakované běhy nevadí — bez změny dat se nic necommituje. Ruční spuštění: `Start-ScheduledTask EnotekaVinotrh-Sync` nebo `powershell -File src\sync.ps1`.
 - **`data/overrides.json`** drží cukernatost pozic 81, 87, 115 (v ERP chybí, hodnoty převzaté z dřívější ruční opravy) — po doplnění v ERP lze smazat.
 - Původní ruční zdroj `data/VINOTRH karta tisk II.xlsx` (list `S4WData`) už se nepoužívá; popis jeho sloupců níže platí obsahově i pro export z ERP.
 
