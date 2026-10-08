@@ -1,4 +1,4 @@
-# Denní synchronizace vinné karty: export z ERP -> output/wines.json -> GitHub -> Vercel.
+﻿# Denní synchronizace vinné karty: export z ERP -> output/wines.json -> GitHub -> Vercel.
 #
 # Spouští naplánovaná úloha Windows "EnotekaVinotrh-Sync" (denně 4:00, viz CLAUDE.md).
 # Commituje a pushuje do main jen tehdy, když se změnila data webu -- Vercel pak
@@ -42,8 +42,9 @@ try {
     Copy-Item $Source $Target -Force
 
     $env:PYTHONIOENCODING = 'utf-8'
+    [Console]::OutputEncoding = [Text.Encoding]::UTF8
     $transform = Invoke-Native py @('-3', '-W', 'ignore', 'src/transform.py')
-    $transform | Where-Object { $_ -notmatch 'Dohledávám URL' } | ForEach-Object { Write-Log "  $_" }
+    $transform | Where-Object { $_ -notmatch 'URL na vinotrh\.cz \(\d+/' -and $_.Trim() } | ForEach-Object { Write-Log "  $_" }
 
     $changed = Invoke-Native git (@('status', '--porcelain', '--') + $DataPaths[0..1])
     if (-not $changed) {
