@@ -2245,7 +2245,7 @@
     "alkohol": 10.0,
     "cukr": 0.0,
     "kyseliny": 7.3,
-    "barva": null,
+    "barva": "růžové",
     "odruda": "Cuvée",
     "sekce": "tematicka_nabidka"
   },
@@ -2868,7 +2868,7 @@
     },
     "kod": "ZNO.0472",
     "alkohol": 12.5,
-    "cukr": 22.6,
+    "cukr": 14.4,
     "kyseliny": 6.6,
     "barva": "bílé",
     "odruda": "Hibernal",

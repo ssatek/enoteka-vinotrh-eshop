@@ -6,11 +6,6 @@
     "nazev": "Veltlínské zelené - Lampelberg 2024 VOC"
   },
   {
-    "pozice": 90,
-    "pole": "Barva",
-    "nazev": "Ryšák"
-  },
-  {
     "pozice": 119,
     "pole": "URL na vinotrh.cz (nedohledáno)",
     "detail": "Kód ART.0085 nevrátil žádnou shodu na vinotrh.cz -- web použije fallback na vyhledávání.",
