@@ -351,13 +351,13 @@
   },
   {
     "pozice": 15,
-    "nazev": "Veltlínské zelené - Lampelberg 2024 VOC",
+    "nazev": "Veltlínské zelené - Volné pole 2025 VOC",
     "cukernatost": "suché",
-    "rocnik": 2024,
+    "rocnik": 2025,
     "jakost": "VOC",
     "vyrobce": "Vinařství LAHOFER",
     "objem": "0,75 l",
-    "url_vinotrh": null,
+    "url_vinotrh": "https://www.vinotrh.cz/veltlinske-zelene-volne-pole-2025-voc/",
     "ceny": {
       "vzorek_20ml": 16,
       "vzorek_50ml": 36,
@@ -366,10 +366,10 @@
       "lahev_otevrit": 265.0,
       "poplatek_otevreni": 70
     },
-    "kod": "LAH.0525",
-    "alkohol": 13.0,
-    "cukr": 4.1,
-    "kyseliny": 6.3,
+    "kod": "LAH.0566",
+    "alkohol": 12.0,
+    "cukr": 3.7,
+    "kyseliny": 6.4,
     "barva": "bílé",
     "odruda": "Veltlínské zelené",
     "sekce": "stala_nabidka"
