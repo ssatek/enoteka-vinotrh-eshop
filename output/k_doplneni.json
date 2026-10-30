@@ -4,5 +4,11 @@
     "pole": "URL na vinotrh.cz (nedohledáno)",
     "detail": "Kód LAH.0519 nevrátil žádnou shodu na vinotrh.cz -- web použije fallback na vyhledávání.",
     "nazev": "Muškát moravský - Olbramovická hora 2024 p.s."
+  },
+  {
+    "pozice": 75,
+    "pole": "URL na vinotrh.cz (nedohledáno)",
+    "detail": "Kód KOR.0228 nevrátil žádnou shodu na vinotrh.cz -- web použije fallback na vyhledávání.",
+    "nazev": "Pinot Blanc 2024"
   }
 ]
